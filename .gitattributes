@@ -1,0 +1,50 @@
+# https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+# https://git-scm.com/docs/gitattributes
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+*               text=auto eol=lf
+
+# Unix files
+*.sh            text eol=lf
+*.bash          text eol=lf
+*.env           text eol=lf
+*.fish          text eol=lf
+*.zsh           text eol=lf
+
+# Windows files
+*.ps1           text eol=crlf
+*.bat           text eol=crlf
+*.cmd           text eol=crlf
+
+# Configuration files
+*.lock              text -diff
+package-lock.json   text -diff
+package.json        text
+Makefile            text
+.editorconfig       text
+.gitattributes      text
+.gitconfig          text
+.config             text
+.conf               text
+
+# Serialized files
+*.ini               text
+*.toml              text
+*.yaml              text
+*.yml               text
+.json               text
+
+# Documentation files
+*.md                text diff=markdown
+*.mdx               text diff=markdown
+*.textile           text
+*.tex               text
+*.txt               text
+*.rst               text
+*.csv               text
+*.tsv               text
+
+# Do not export these files
+.gitignore          export-ignore
+.gitattributes      export-ignore
+.gitkeep            export-ignore
